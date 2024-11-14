@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO list</title>
+    <link rel="stylesheet" href="/static/mobile.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <section class="container">
+        <!-- profile section -->
+        <section class="Profile-section">
+          <nav class="navbar">
+            <div class="image-box">
+              <img src="/static/images/Right-sign-modified.png" alt="" />
+              <span class="Dashboard">Dashboard</span>
+            </div>
+            <div class="image-box">
+              <img
+                src="/static/images/todo-gif2.gif"
+                alt=""
+                id="First-profile"
+                class="Profile-imgs"
+              />
+            </div>
+          </nav>
+          <div class="navbar-right" id="Profile-none">
+            <div class="profile-box-right">
+              <div class="Profile-img-center">
+                <img
+                  src="/static/images/todo-gif2.gif"
+                  alt=""
+                  id="second-profile"
+                  class="Profile-imgs"
+                />
+                <p id="profile-Name">Gust</p>
+              </div>
+              <i class="fa-solid fa-xmark" id="cross-button"></i>
+            </div>
+            <hr />
+            <div class="profile-box-body">
+              <div class="ImgUpload-box">
+                <p>Image upload</p>
+                <input type="file" id="Image-Upload" />
+              </div>
+              <button id="Sign-out">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+              </button>
+            </div>
+          </div>
+        </section>
+  
+        <!-- Form section -->
+        <div class="form-section">
+          <h1 class="Alternate-H1">Save Your Task</h1>
+          <form action="#" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  
+            <div>
+              <label for="title" class="Labels">Title</label>
+              <input type="text" id="title" name="title" required/>
+            </div>
+            <div>
+            <label for="description" class="Labels">Explain Your Task</label>
+            <textarea name="description" id="Task" rows="20" required></textarea>
+            </div>
+          </form>
+          <div class="buttons">
+            <div class="left-Buttons button">
+              <button class="btn workbtn" id="SHowBox">showBox</button>
+              <button class="btn workbtn" id="Submit">Submit</button>
+              <button class="btn workbtn" id="Story">Story</button>
+              <button class="btn workbtn" id="Show-Hide">Hide All</button>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!-- To Do list -->
+        <div class="Todo-container">
+          <div id="Todo"></div>
+        </div>
+  
+        <!-- Pop up container That shows the pop box with details -->
+        <div id="popUp-container">
+          <span id="CloseBtn"><button class="btn workbtn">Close</button></span>
+          <div id="Pop-Minijs"></div>
+        </div>
+      </section>
+</body>
+</html>

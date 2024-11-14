@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO list</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/mobile.css" />
+  </head>
+  <body>
+
+    <section class="Main-login" id="Main-login-display">
+        <section class="login-container">
+          <div class="Circle-parent">
+            <div class="circle circle1"><div class="circleBorder"></div></div>
+            <span>Anywhere app</span>
+          </div>
+          <!-- login -->
+          <div class="Form-container" id="Login-page">
+            <div class="form-text">
+              <span class="blurSpan">WELCOME BACK !!</span>
+              <h2>
+                Login Existing account
+                <div class="circle circle2">
+                  <div class="circleBorder"></div>
+                </div>
+              </h2>
+              <span class="blurSpan"
+                >Not Have any account?
+                <a href="/" class="login-switch" id="Go-SignUp">Sign Up</a></span
+              >
+            </div>
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}  
+              <div class="EmailPassword">
+                <input
+                  type="email"
+                  class="inputs"
+                  placeholder="Email"
+                  id="Login-Email"
+                  name="loginEmail"
+                />
+                <input
+                  type="password"
+                  class="inputs"
+                  placeholder="Password"
+                  id="Login-Password"
+                  name="loginPassword"
+                />
+              </div>
+              <div class="login-buttons">
+                <button id="login-btn1" class="login-new1">Log In</button>
+              </div>
+              <span class="blurSpan"
+              >Want to use without login?
+              <a href="{% url "TaskManager" %}"  class="login-switch" id="Go-SignUp">Task Manager</a></span>
+            </form>
+            {% comment %} {% endfor %} {% endcomment %}
+            <p id="LoginError" class="TextForMesage"></p>
+          </div>
+        </section>
+      </section>
+
+    <script
+      src="https://kit.fontawesome.com/428748ad61.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/script.js"></script>
+  </body>
+</html>

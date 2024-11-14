@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Data</title>
+</head>
+<body>
+    <center>
+    <h1>User Data</h1>
+    <table style="border: 3px solid black; border-collapse: collapse;">
+        <tr>
+            <th  style="border: 3px solid rgb(255, 0, 0);">id</th>
+            <th  style="border: 3px solid rgb(255, 0, 0);">First Name</th>
+            <th  style="border: 3px solid rgb(255, 0, 0);">Last Name</th>
+            <th  style="border: 3px solid rgb(255, 0, 0);">Email</th>
+            <th  style="border: 3px solid rgb(255, 0, 0);">Password</th>
+            <th  style="border: 3px solid rgb(255, 0, 0);">Action</th>
+        </tr>
+        {% for user in userData %}
+        <tr>
+            <td style="border: 3px solid rgb(255, 0, 0);">{{ user.id }}</td>
+            <td style="border: 3px solid rgb(255, 0, 0);">{{ user.first_name }}</td>
+            <td style="border: 3px solid rgb(255, 0, 0);">{{ user.last_name }}</td>
+            <td style="border: 3px solid rgb(255, 0, 0);">{{ user.email }}</td>
+            <td style="border: 3px solid rgb(255, 0, 0);">{{ user.password }}</td>
+            <td style="border: 3px solid rgb(255, 0, 0);">
+                <a href="/deleteProfile/{{ user.id }}">Delete</a>
+                {% comment %} <a href="/EditProfile/{{ user.id }}">Edit</a> {% endcomment %}
+                {% comment %} <a>Delete</a> {% endcomment %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
