@@ -68,6 +68,12 @@ http://localhost:8000
 - HTML, CSS, JavaScript – Frontend technologies for user interface
 
 
+# Alternative Project
+There is also an alternative **HTML**, **CSS**, and **JavaScript** project version of this Task Manager with login-signup functionality. You can check it here: -
+
+**Live Link to HTML/CSS/JS Task Manager Project:**
+[Link Text](https://vasudevpareek.netlify.app/login%20to-do/)
+
 # Setting Up Virtual Environment
 To ensure package isolation, set up a virtual environment, if upper step is not work: -
 
@@ -122,8 +128,4 @@ If you want to run multiple apps simultaneously:
 python manage.py runserver 8002
 ```
 
-# Alternative Project
-There is also an alternative **HTML**, **CSS**, and **JavaScript** project version of this Task Manager with login-signup functionality. You can check it here: -
 
-**Live Link to HTML/CSS/JS Task Manager Project:**
-[Link Text](https://vasudevpareek.netlify.app/login%20to-do/)
